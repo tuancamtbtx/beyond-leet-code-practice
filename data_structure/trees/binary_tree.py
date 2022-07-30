@@ -1,35 +1,35 @@
 class Node():
-    def __init__(self, data):
+    def __init__(self, value):
         self.left = None
         self.right = None
-        self.data = data
+        self.value = value
 
-    def insert(self, data):
-        if self.data:
-            if data > self.data:
-                if self.left is None:
-                    self.left = Node(data) 
-                else:
-                    self.left.insert(data)
-            if data < self.data:
-                if self.right is None:
-                    self.right = Node(data)
-                else:
-                    self.right.insert(data)
+    def insert(self, value):
+        if self.value == value:
+            return
+        elif value < self.value:
+            if self.left is None: # at end leaf node 
+                self.left = Node(value)
+            else:
+                self.left.insert(value)
         else:
-            self.data = data
+            if self.right is None:
+                self.right = Node(value)
+            else:
+                self.right.insert(value)
     def print_tree(self):
         if self.left:
             self.left.print_tree()
-        print(self.data)
         if self.right:
             self.right.print_tree()
+        print(self.value)
 
 def main():
     root = Node(12)
     root.insert(1)
     root.insert(2)
     root.insert(20)
+    root.insert(100)
     root.print_tree()
 
 if __name__ == "__main__":
