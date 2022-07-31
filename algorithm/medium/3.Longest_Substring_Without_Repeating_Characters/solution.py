@@ -9,16 +9,16 @@ class Solution(object):
         result = 0
         for i in range(len(s)):
             while s[i] in char_set:
-                print(j)
                 char_set.remove(s[j])
                 j += 1
             char_set.add(s[i])
             result = max(result, i - j + 1)
+        print(char_set)
         return result
 
 def main():
     solution = Solution()
-    in_str = "pwwkew" # sorted
+    in_str = "abcabcbb" # sorted
 
     len_longest = solution.lengthOfLongestSubstring(in_str)
     print('length:',len_longest)
