@@ -23,7 +23,7 @@ class Solution(object):
             if A_left <= B_right and B_left <= A_right:
                 if total % 2:
                     return min(A_right, B_right)
-                return (max(A_left + B_left) + min(A_right, B_right)) / 2
+                return (max(A_left, B_left) + min(A_right, B_right)) / 2
             elif A_left > B_right:
                 right = i - 1
             else:
@@ -36,7 +36,7 @@ class Solution(object):
 def main():
     solution = Solution()
     nums1 = [1, 2] # sorted
-    nums2 = [3, 4, 6] # sorted
+    nums2 = [3, 4] # sorted
 
     median = solution.findMedianSortedArrays(nums1, nums2)
     print('median',median)
