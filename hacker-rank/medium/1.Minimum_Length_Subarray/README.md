@@ -8,3 +8,9 @@ k = 3
 
 1. use binary search find sub array distinct k
 2. use set to check sub array is array with k distinct
+
+## Example 1:
+```
+	Input: strs = ["eat","tea","tan","ate","nat","bat"]
+	Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+```	
