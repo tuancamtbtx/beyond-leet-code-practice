@@ -22,7 +22,6 @@ class Solution(object):
         # use binary search
         while left <= right:
             mid = left +  (right - left) // 2 
-            print(mid)
             if(self.isSubarrayKDistinct(arr, k, mid)):
                 result = mid
                 right = mid - 1

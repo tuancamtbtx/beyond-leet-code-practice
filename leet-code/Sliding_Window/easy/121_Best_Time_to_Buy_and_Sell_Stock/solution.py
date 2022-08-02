@@ -7,7 +7,6 @@ class Solution(object):
         time_buy = 0
         profit = 0
         for time in range(1, len(prices)):
-            print(time, time_buy)
             # select best price to buy
             if prices[time_buy] > prices[time]:
                 time_buy = time

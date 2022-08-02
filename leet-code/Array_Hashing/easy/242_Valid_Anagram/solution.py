@@ -9,7 +9,6 @@ class Solution(object):
             return False
         s = ''.join(sorted(s))
         t = ''.join(sorted(t))
-
         return hash(s) == hash(t)
         
 def main():

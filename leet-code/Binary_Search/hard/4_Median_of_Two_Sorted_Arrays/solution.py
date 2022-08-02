@@ -28,10 +28,6 @@ class Solution(object):
                 right = i - 1
             else:
                 left = i + 1
-
-
-
-
         
 def main():
     solution = Solution()
