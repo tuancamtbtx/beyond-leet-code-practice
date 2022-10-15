@@ -9,3 +9,23 @@ Given an array of integers, determine the length of the longest strictly increas
  
 
 For example, s = [1, 2, 2, 3, 1, 6]. Two strictly increasing subsequences are (1,2), (1, 2, 3). The longest increasing subsequence has a length of 4: LIS = [1,2,3,6].
+
+Function Description 
+
+ 
+
+Complete the function findLIS in the editor below.
+
+ 
+
+findLIS has the following parameter(s):
+
+    int s[n]:  an array of integers
+
+ 
+
+Returns:
+
+    int: the length of the longest strictly increasing subsequence in the array
+
+ 

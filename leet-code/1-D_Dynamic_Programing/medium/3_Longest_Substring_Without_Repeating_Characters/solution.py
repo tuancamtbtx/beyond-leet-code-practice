@@ -18,7 +18,7 @@ class Solution(object):
 
 def main():
     solution = Solution()
-    in_str = "abcabcbb" # sorted
+    in_str = "abcabcbb"
 
     len_longest = solution.lengthOfLongestSubstring(in_str)
     print('length:',len_longest)

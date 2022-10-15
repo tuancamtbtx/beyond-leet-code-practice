@@ -15,7 +15,6 @@ class Solution(object):
             left = i + 1
             right = len(nums) - 1
             while left < right:
-                
                 t_sum = nums[i] + nums[left] + nums[right]
                 if t_sum > 0:
                     right -= 1

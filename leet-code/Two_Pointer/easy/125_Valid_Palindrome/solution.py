@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: bool
         """
         left, right = 0, len(s) - 1 
-        print('size', len(s))
         while left < right:
             if not self.alphanum(s[left]):
                 left += 1

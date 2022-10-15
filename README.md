@@ -1,2 +1,2 @@
-# progaming language: Python3 or Nodejs
+# Progaming language: Python3 or Nodejs
 
