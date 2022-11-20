@@ -11,7 +11,6 @@ class Solution(object):
             if i == len(arr) - 1:
                 arr[i] = -1
                 break
-            print("tmp: ", arr, arr[step : len(arr) - 1])
             greatest = max(arr[step : len(arr)])
             arr[i] = greatest
         return arr
