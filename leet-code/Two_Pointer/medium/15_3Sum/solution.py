@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         results = []
-        nums_set = set(nums)
         nums = sorted(nums)
         
         for i in range(len(nums)):

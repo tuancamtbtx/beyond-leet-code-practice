@@ -4,8 +4,6 @@ class Solution(object):
         :type arr: List[int]
         :rtype: List[int]
         """
-        greatest_set = {}
-        result = []
         for i,n in enumerate(arr):
             step = i + 1
             if i == len(arr) - 1:
