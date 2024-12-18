@@ -56,5 +56,3 @@ print("Output for n = 1:", output2)
 - If the number of open parentheses `left` is less than `n`, we can add an open parenthesis `'('` to `s`, push it to the stack, and recurse.
 - If the number of close parentheses `right` is less than `left`, we can add a close parenthesis `')'` to `s`, push it to the stack, and recurse.
 - After each recursive call, we pop the stack to backtrack, although the stack itself is not used for validation here but to illustrate the stack-like recursive process.
-
-This implementation still uses backtracking but incorporates a stack-like list to mirror the recursive decision-making process of adding parentheses.
