@@ -13,6 +13,7 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        pass
     def init_linked_list(self, arr):
         list_node = ListNode(arr[0], None)
         for i in range(len(arr) - 1):

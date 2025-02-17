@@ -19,6 +19,8 @@ def main():
 
     result = solution.longestCommonPrefix(strs)
     print('result',result)
+    prefix = "1234"
+  
     
 if __name__ == "__main__":
     main()

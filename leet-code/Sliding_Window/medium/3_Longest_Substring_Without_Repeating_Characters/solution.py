@@ -14,3 +14,5 @@ class Solution(object):
             char_set.add(s[i])
             result = max(result, i - j + 1)
         return result
+solution = Solution()
+result = solution.lengthOfLongestSubstring()

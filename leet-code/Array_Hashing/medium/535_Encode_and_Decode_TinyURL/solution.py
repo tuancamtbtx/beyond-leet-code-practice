@@ -1,21 +1,54 @@
-Note: This is a companion problem to the System Design problem: Design TinyURL.
-TinyURL is a URL shortening service where you enter a URL such as https://leetcode.com/problems/design-tinyurl and it returns a short URL such as http://tinyurl.com/4e9iAk. Design a class to encode a URL and decode a tiny URL.
+import random
+import string
 
-There is no restriction on how your encode/decode algorithm should work. You just need to ensure that a URL can be encoded to a tiny URL and the tiny URL can be decoded to the original URL.
+class Solution:
+    def __init__(self):
+        self.url_to_code = {}  # Maps long URLs to short codes
+        self.code_to_url = {}  # Maps short codes to long URLs
+        self.base_url = "http://tinyurl.com/"
+        self.code_length = 6  # Length of the short code
 
-Implement the Solution class:
+    def _generate_code(self):
+        """Generates a random short code."""
+        return ''.join(random.choices(string.ascii_letters + string.digits, k=self.code_length))
 
-Solution() Initializes the object of the system.
-String encode(String longUrl) Returns a tiny URL for the given longUrl.
-String decode(String shortUrl) Returns the original long URL for the given shortUrl. It is guaranteed that the given shortUrl was encoded by the same object.
- 
+    def encode(self, longUrl):
+        """
+        Encodes a long URL to a short URL.
+        
+        :type longUrl: str
+        :rtype: str
+        """
+        if longUrl in self.url_to_code:
+            # If the URL is already encoded, return the existing short URL
+            code = self.url_to_code[longUrl]
+        else:
+            # Generate a new code and ensure it's unique
+            code = self._generate_code()
+            while code in self.code_to_url:
+                code = self._generate_code()
+            
+            # Store the mapping
+            self.url_to_code[longUrl] = code
+            self.code_to_url[code] = longUrl
+        
+        return self.base_url + code
 
-Example 1:
+    def decode(self, shortUrl):
+        """
+        Decodes a short URL to the original long URL.
+        
+        :type shortUrl: str
+        :rtype: str
+        """
+        # Extract the code from the short URL
+        code = shortUrl[len(self.base_url):]
+        return self.code_to_url.get(code, "")
 
-Input: url = "https://leetcode.com/problems/design-tinyurl"
-Output: "https://leetcode.com/problems/design-tinyurl"
-
-Explanation:
-Solution obj = new Solution();
-string tiny = obj.encode(url); // returns the encoded tiny url.
-string ans = obj.decode(tiny); // returns the original url after deconding it.
+# Example usage
+solution = Solution()
+url = "https://leetcode.com/problems/design-tinyurl"
+tiny = solution.encode(url)
+print("Encoded:", tiny)  # Returns the encoded tiny URL
+original = solution.decode(tiny)
+print("Decoded:", original)  # Returns the original URL
